@@ -1,0 +1,89 @@
+[[07/30/2023 12:57:31 AM]] 
+new run with parameters:
+{'batch_size': 128,
+ 'checkpoint_dir': './checkpoints_nn',
+ 'early_stopping_steps': 300,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 5,
+ 'hidden_units': 64,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.005,
+ 'log_dir': './logs_nn',
+ 'log_interval': 20,
+ 'loss_averaging_window': 100,
+ 'min_steps_to_checkpoint': 100,
+ 'num_restarts': 0,
+ 'num_training_steps': 2000,
+ 'num_validation_batches': 2,
+ 'optimizer': 'adam',
+ 'prediction_dir': './predictions_nn',
+ 'reader': <__main__.DataReader object at 0x2aedb8ecdc88>,
+ 'regularization_constant': 0.0,
+ 'warm_start_init_step': 0}
+[[07/30/2023 12:57:39 AM]] all parameters:
+[[07/30/2023 12:57:39 AM]] [('dense1/weights:0', [51, 64]),
+ ('dense1/biases:0', [64]),
+ ('dense2/weights:0', [115, 1]),
+ ('dense2/biases:0', [1]),
+ ('Variable:0', []),
+ ('Variable_1:0', []),
+ ('beta1_power:0', []),
+ ('beta2_power:0', []),
+ ('dense1/weights/Adam:0', [51, 64]),
+ ('dense1/weights/Adam_1:0', [51, 64]),
+ ('dense1/biases/Adam:0', [64]),
+ ('dense1/biases/Adam_1:0', [64]),
+ ('dense2/weights/Adam:0', [115, 1]),
+ ('dense2/weights/Adam_1:0', [115, 1]),
+ ('dense2/biases/Adam:0', [1]),
+ ('dense2/biases/Adam_1:0', [1])]
+[[07/30/2023 12:57:39 AM]] trainable parameters:
+[[07/30/2023 12:57:39 AM]] [('dense1/weights:0', [51, 64]),
+ ('dense1/biases:0', [64]),
+ ('dense2/weights:0', [115, 1]),
+ ('dense2/biases:0', [1])]
+[[07/30/2023 12:57:39 AM]] trainable parameter count:
+[[07/30/2023 12:57:39 AM]] 3444
+[[07/30/2023 12:57:39 AM]] [[step        0]]     [[train]]     loss: 0.64390874       [[val]]     loss: 0.64390868       
+[[07/30/2023 12:57:39 AM]] [[step       20]]     [[train]]     loss: 0.04466904       [[val]]     loss: 0.04380135       
+[[07/30/2023 12:57:39 AM]] [[step       40]]     [[train]]     loss: -0.83767337      [[val]]     loss: -0.83755546      
+[[07/30/2023 12:57:39 AM]] [[step       60]]     [[train]]     loss: -2.10015821      [[val]]     loss: -2.10112127      
+[[07/30/2023 12:57:39 AM]] [[step       80]]     [[train]]     loss: -3.8695126       [[val]]     loss: -3.87427118      
+[[07/30/2023 12:57:39 AM]] [[step      100]]     [[train]]     loss: -6.35227943      [[val]]     loss: -6.3609742       
+[[07/30/2023 12:57:39 AM]] [[step      120]]     [[train]]     loss: -11.40067086     [[val]]     loss: -11.39608039     
+[[07/30/2023 12:57:39 AM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 12:57:39 AM]] [[step      140]]     [[train]]     loss: -17.73962601     [[val]]     loss: -17.73210009     
+[[07/30/2023 12:57:39 AM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 12:57:40 AM]] [[step      160]]     [[train]]     loss: -23.70973011     [[val]]     loss: -23.70157294     
+[[07/30/2023 12:57:40 AM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 12:57:40 AM]] [[step      180]]     [[train]]     loss: -28.76427592     [[val]]     loss: -28.75285636     
+[[07/30/2023 12:57:40 AM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 12:57:40 AM]] [[step      200]]     [[train]]     loss: -32.4604953      [[val]]     loss: -32.44424        
+[[07/30/2023 12:57:40 AM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 12:57:40 AM]] [[step      220]]     [[train]]     loss: -34.3227998      [[val]]     loss: -34.3196521      
+[[07/30/2023 12:57:40 AM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 12:57:40 AM]] [[step      240]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 12:57:40 AM]] [[step      260]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] [[step      280]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] [[step      300]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] [[step      320]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] [[step      340]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] [[step      360]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] [[step      380]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] [[step      400]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:40 AM]] [[step      420]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:41 AM]] [[step      440]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:41 AM]] [[step      460]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:41 AM]] [[step      480]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:41 AM]] [[step      500]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:41 AM]] [[step      520]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:41 AM]] [[step      540]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:41 AM]] [[step      560]]     [[train]]     loss: -34.53877258     [[val]]     loss: -34.53879547     
+[[07/30/2023 12:57:41 AM]] best validation loss of -34.538795471191406 at training step 240
+[[07/30/2023 12:57:41 AM]] early stopping - ending training.
+[[07/30/2023 12:57:41 AM]] restoring model parameters from ./checkpoints_nn/model-240
+[[07/30/2023 12:57:41 AM]] saving order_ids with shape (55854,) to ./predictions_nn/order_ids.npy
+[[07/30/2023 12:57:41 AM]] saving product_ids with shape (55854,) to ./predictions_nn/product_ids.npy
+[[07/30/2023 12:57:41 AM]] saving predictions with shape (55854,) to ./predictions_nn/predictions.npy
+[[07/30/2023 12:57:41 AM]] saving labels with shape (55854,) to ./predictions_nn/labels.npy

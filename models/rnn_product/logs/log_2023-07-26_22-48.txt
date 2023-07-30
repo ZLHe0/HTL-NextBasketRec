@@ -1,0 +1,397 @@
+[[07/26/2023 10:48:31 PM]] 
+new run with parameters:
+{'batch_size': 128,
+ 'checkpoint_dir': './checkpoints',
+ 'dilations': [1, 2, 4, 8, 16, 32],
+ 'early_stopping_steps': 300,
+ 'enable_parameter_averaging': False,
+ 'filter_widths': [2, 2, 2, 2, 2, 2],
+ 'grad_clip': 5,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.001,
+ 'log_dir': './logs',
+ 'log_interval': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 300,
+ 'min_steps_to_checkpoint': 1000,
+ 'num_restarts': 2,
+ 'num_training_steps': 3000,
+ 'num_validation_batches': 4,
+ 'optimizer': 'adam',
+ 'prediction_dir': './predictions',
+ 'reader': <__main__.DataReader object at 0x2b4e5918d668>,
+ 'regularization_constant': 0.0,
+ 'residual_channels': 128,
+ 'skip_channels': 64,
+ 'warm_start_init_step': 0}
+[[07/26/2023 10:48:42 PM]] all parameters:
+[[07/26/2023 10:48:42 PM]] [('product_embeddings:0', [50000, 300]),
+ ('aisle_embeddings:0', [250, 50]),
+ ('department_embeddings:0', [50, 10]),
+ ('dense-layer/weights:0', [2532, 100]),
+ ('dense-layer/biases:0', [100]),
+ ('user_embeddings:0', [207000, 300]),
+ ('lstm-layer/rnn/lstm_cell/kernel:0', [1365, 1200]),
+ ('lstm-layer/rnn/lstm_cell/bias:0', [1200]),
+ ('wavenet/x-proj/weights:0', [1065, 128]),
+ ('wavenet/x-proj/biases:0', [128]),
+ ('wavenet/cnn-0/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-0/biases:0', [256]),
+ ('wavenet/cnn-0-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-0-proj/biases:0', [192]),
+ ('wavenet/cnn-1/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-1/biases:0', [256]),
+ ('wavenet/cnn-1-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-1-proj/biases:0', [192]),
+ ('wavenet/cnn-2/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-2/biases:0', [256]),
+ ('wavenet/cnn-2-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-2-proj/biases:0', [192]),
+ ('wavenet/cnn-3/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-3/biases:0', [256]),
+ ('wavenet/cnn-3-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-3-proj/biases:0', [192]),
+ ('wavenet/cnn-4/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-4/biases:0', [256]),
+ ('wavenet/cnn-4-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-4-proj/biases:0', [192]),
+ ('wavenet/cnn-5/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-5/biases:0', [256]),
+ ('wavenet/cnn-5-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-5-proj/biases:0', [192]),
+ ('dense-1/weights:0', [1749, 50]),
+ ('dense-1/biases:0', [50]),
+ ('dense-2/weights:0', [50, 1]),
+ ('dense-2/biases:0', [1]),
+ ('Variable:0', []),
+ ('Variable_1:0', []),
+ ('beta1_power:0', []),
+ ('beta2_power:0', []),
+ ('product_embeddings/Adam:0', [50000, 300]),
+ ('product_embeddings/Adam_1:0', [50000, 300]),
+ ('aisle_embeddings/Adam:0', [250, 50]),
+ ('aisle_embeddings/Adam_1:0', [250, 50]),
+ ('department_embeddings/Adam:0', [50, 10]),
+ ('department_embeddings/Adam_1:0', [50, 10]),
+ ('dense-layer/weights/Adam:0', [2532, 100]),
+ ('dense-layer/weights/Adam_1:0', [2532, 100]),
+ ('dense-layer/biases/Adam:0', [100]),
+ ('dense-layer/biases/Adam_1:0', [100]),
+ ('user_embeddings/Adam:0', [207000, 300]),
+ ('user_embeddings/Adam_1:0', [207000, 300]),
+ ('lstm-layer/rnn/lstm_cell/kernel/Adam:0', [1365, 1200]),
+ ('lstm-layer/rnn/lstm_cell/kernel/Adam_1:0', [1365, 1200]),
+ ('lstm-layer/rnn/lstm_cell/bias/Adam:0', [1200]),
+ ('lstm-layer/rnn/lstm_cell/bias/Adam_1:0', [1200]),
+ ('wavenet/x-proj/weights/Adam:0', [1065, 128]),
+ ('wavenet/x-proj/weights/Adam_1:0', [1065, 128]),
+ ('wavenet/x-proj/biases/Adam:0', [128]),
+ ('wavenet/x-proj/biases/Adam_1:0', [128]),
+ ('wavenet/cnn-0/weights/Adam:0', [2, 128, 256]),
+ ('wavenet/cnn-0/weights/Adam_1:0', [2, 128, 256]),
+ ('wavenet/cnn-0/biases/Adam:0', [256]),
+ ('wavenet/cnn-0/biases/Adam_1:0', [256]),
+ ('wavenet/cnn-0-proj/weights/Adam:0', [128, 192]),
+ ('wavenet/cnn-0-proj/weights/Adam_1:0', [128, 192]),
+ ('wavenet/cnn-0-proj/biases/Adam:0', [192]),
+ ('wavenet/cnn-0-proj/biases/Adam_1:0', [192]),
+ ('wavenet/cnn-1/weights/Adam:0', [2, 128, 256]),
+ ('wavenet/cnn-1/weights/Adam_1:0', [2, 128, 256]),
+ ('wavenet/cnn-1/biases/Adam:0', [256]),
+ ('wavenet/cnn-1/biases/Adam_1:0', [256]),
+ ('wavenet/cnn-1-proj/weights/Adam:0', [128, 192]),
+ ('wavenet/cnn-1-proj/weights/Adam_1:0', [128, 192]),
+ ('wavenet/cnn-1-proj/biases/Adam:0', [192]),
+ ('wavenet/cnn-1-proj/biases/Adam_1:0', [192]),
+ ('wavenet/cnn-2/weights/Adam:0', [2, 128, 256]),
+ ('wavenet/cnn-2/weights/Adam_1:0', [2, 128, 256]),
+ ('wavenet/cnn-2/biases/Adam:0', [256]),
+ ('wavenet/cnn-2/biases/Adam_1:0', [256]),
+ ('wavenet/cnn-2-proj/weights/Adam:0', [128, 192]),
+ ('wavenet/cnn-2-proj/weights/Adam_1:0', [128, 192]),
+ ('wavenet/cnn-2-proj/biases/Adam:0', [192]),
+ ('wavenet/cnn-2-proj/biases/Adam_1:0', [192]),
+ ('wavenet/cnn-3/weights/Adam:0', [2, 128, 256]),
+ ('wavenet/cnn-3/weights/Adam_1:0', [2, 128, 256]),
+ ('wavenet/cnn-3/biases/Adam:0', [256]),
+ ('wavenet/cnn-3/biases/Adam_1:0', [256]),
+ ('wavenet/cnn-3-proj/weights/Adam:0', [128, 192]),
+ ('wavenet/cnn-3-proj/weights/Adam_1:0', [128, 192]),
+ ('wavenet/cnn-3-proj/biases/Adam:0', [192]),
+ ('wavenet/cnn-3-proj/biases/Adam_1:0', [192]),
+ ('wavenet/cnn-4/weights/Adam:0', [2, 128, 256]),
+ ('wavenet/cnn-4/weights/Adam_1:0', [2, 128, 256]),
+ ('wavenet/cnn-4/biases/Adam:0', [256]),
+ ('wavenet/cnn-4/biases/Adam_1:0', [256]),
+ ('wavenet/cnn-4-proj/weights/Adam:0', [128, 192]),
+ ('wavenet/cnn-4-proj/weights/Adam_1:0', [128, 192]),
+ ('wavenet/cnn-4-proj/biases/Adam:0', [192]),
+ ('wavenet/cnn-4-proj/biases/Adam_1:0', [192]),
+ ('wavenet/cnn-5/weights/Adam:0', [2, 128, 256]),
+ ('wavenet/cnn-5/weights/Adam_1:0', [2, 128, 256]),
+ ('wavenet/cnn-5/biases/Adam:0', [256]),
+ ('wavenet/cnn-5/biases/Adam_1:0', [256]),
+ ('wavenet/cnn-5-proj/weights/Adam:0', [128, 192]),
+ ('wavenet/cnn-5-proj/weights/Adam_1:0', [128, 192]),
+ ('wavenet/cnn-5-proj/biases/Adam:0', [192]),
+ ('wavenet/cnn-5-proj/biases/Adam_1:0', [192]),
+ ('dense-1/weights/Adam:0', [1749, 50]),
+ ('dense-1/weights/Adam_1:0', [1749, 50]),
+ ('dense-1/biases/Adam:0', [50]),
+ ('dense-1/biases/Adam_1:0', [50]),
+ ('dense-2/weights/Adam:0', [50, 1]),
+ ('dense-2/weights/Adam_1:0', [50, 1]),
+ ('dense-2/biases/Adam:0', [1]),
+ ('dense-2/biases/Adam_1:0', [1])]
+[[07/26/2023 10:48:42 PM]] trainable parameters:
+[[07/26/2023 10:48:42 PM]] [('product_embeddings:0', [50000, 300]),
+ ('aisle_embeddings:0', [250, 50]),
+ ('department_embeddings:0', [50, 10]),
+ ('dense-layer/weights:0', [2532, 100]),
+ ('dense-layer/biases:0', [100]),
+ ('user_embeddings:0', [207000, 300]),
+ ('lstm-layer/rnn/lstm_cell/kernel:0', [1365, 1200]),
+ ('lstm-layer/rnn/lstm_cell/bias:0', [1200]),
+ ('wavenet/x-proj/weights:0', [1065, 128]),
+ ('wavenet/x-proj/biases:0', [128]),
+ ('wavenet/cnn-0/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-0/biases:0', [256]),
+ ('wavenet/cnn-0-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-0-proj/biases:0', [192]),
+ ('wavenet/cnn-1/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-1/biases:0', [256]),
+ ('wavenet/cnn-1-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-1-proj/biases:0', [192]),
+ ('wavenet/cnn-2/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-2/biases:0', [256]),
+ ('wavenet/cnn-2-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-2-proj/biases:0', [192]),
+ ('wavenet/cnn-3/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-3/biases:0', [256]),
+ ('wavenet/cnn-3-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-3-proj/biases:0', [192]),
+ ('wavenet/cnn-4/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-4/biases:0', [256]),
+ ('wavenet/cnn-4-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-4-proj/biases:0', [192]),
+ ('wavenet/cnn-5/weights:0', [2, 128, 256]),
+ ('wavenet/cnn-5/biases:0', [256]),
+ ('wavenet/cnn-5-proj/weights:0', [128, 192]),
+ ('wavenet/cnn-5-proj/biases:0', [192]),
+ ('dense-1/weights:0', [1749, 50]),
+ ('dense-1/biases:0', [50]),
+ ('dense-2/weights:0', [50, 1]),
+ ('dense-2/biases:0', [1])]
+[[07/26/2023 10:48:42 PM]] trainable parameter count:
+[[07/26/2023 10:48:42 PM]] 79772859
+[[07/26/2023 10:48:59 PM]] [[step        0]]     [[train]]     loss: 0.57493764       [[val]]     loss: 0.57427824       
+[[07/26/2023 10:54:24 PM]] [[step       20]]     [[train]]     loss: 0.21264568       [[val]]     loss: 0.21810684       
+[[07/26/2023 10:59:50 PM]] [[step       40]]     [[train]]     loss: 0.11726768       [[val]]     loss: 0.12095815       
+[[07/26/2023 11:05:18 PM]] [[step       60]]     [[train]]     loss: 0.07885307       [[val]]     loss: 0.08133095       
+[[07/26/2023 11:10:43 PM]] [[step       80]]     [[train]]     loss: 0.05938667       [[val]]     loss: 0.06125231       
+[[07/26/2023 11:16:09 PM]] [[step      100]]     [[train]]     loss: 0.04235557       [[val]]     loss: 0.04387347       
+[[07/26/2023 11:21:36 PM]] [[step      120]]     [[train]]     loss: 0.00345081       [[val]]     loss: 0.00381538       
+[[07/26/2023 11:27:03 PM]] [[step      140]]     [[train]]     loss: 2.816e-05        [[val]]     loss: 2.634e-05        
+[[07/26/2023 11:32:31 PM]] [[step      160]]     [[train]]     loss: 8.83e-06         [[val]]     loss: 8.54e-06         
+[[07/26/2023 11:37:58 PM]] [[step      180]]     [[train]]     loss: 7.04e-06         [[val]]     loss: 7.14e-06         
+[[07/26/2023 11:43:25 PM]] [[step      200]]     [[train]]     loss: 6.36e-06         [[val]]     loss: 6.22e-06         
+[[07/26/2023 11:48:53 PM]] [[step      220]]     [[train]]     loss: 5.72e-06         [[val]]     loss: 5.55e-06         
+[[07/26/2023 11:54:19 PM]] [[step      240]]     [[train]]     loss: 4.99e-06         [[val]]     loss: 4.99e-06         
+[[07/26/2023 11:59:47 PM]] [[step      260]]     [[train]]     loss: 4.43e-06         [[val]]     loss: 4.46e-06         
+[[07/27/2023 12:05:15 AM]] [[step      280]]     [[train]]     loss: 4.07e-06         [[val]]     loss: 3.99e-06         
+[[07/27/2023 12:10:41 AM]] [[step      300]]     [[train]]     loss: 3.6e-06          [[val]]     loss: 3.62e-06         
+[[07/27/2023 12:16:10 AM]] [[step      320]]     [[train]]     loss: 3.36e-06         [[val]]     loss: 3.25e-06         
+[[07/27/2023 12:21:36 AM]] [[step      340]]     [[train]]     loss: 3.03e-06         [[val]]     loss: 2.93e-06         
+[[07/27/2023 12:27:03 AM]] [[step      360]]     [[train]]     loss: 2.77e-06         [[val]]     loss: 2.64e-06         
+[[07/27/2023 01:17:12 AM]] [[step      380]]     [[train]]     loss: 2.64e-06         [[val]]     loss: 2.42e-06         
+[[07/27/2023 01:22:40 AM]] [[step      400]]     [[train]]     loss: 2.4e-06          [[val]]     loss: 2.18e-06         
+[[07/27/2023 01:28:11 AM]] [[step      420]]     [[train]]     loss: 2.16e-06         [[val]]     loss: 1.99e-06         
+[[07/27/2023 01:33:42 AM]] [[step      440]]     [[train]]     loss: 2.04e-06         [[val]]     loss: 1.81e-06         
+[[07/27/2023 01:39:10 AM]] [[step      460]]     [[train]]     loss: 1.82e-06         [[val]]     loss: 1.67e-06         
+[[07/27/2023 01:44:37 AM]] [[step      480]]     [[train]]     loss: 1.53e-06         [[val]]     loss: 1.52e-06         
+[[07/27/2023 01:50:04 AM]] [[step      500]]     [[train]]     loss: 1.4e-06          [[val]]     loss: 1.41e-06         
+[[07/27/2023 01:55:31 AM]] [[step      520]]     [[train]]     loss: 1.31e-06         [[val]]     loss: 1.29e-06         
+[[07/27/2023 02:00:59 AM]] [[step      540]]     [[train]]     loss: 1.22e-06         [[val]]     loss: 1.2e-06          
+[[07/27/2023 02:06:24 AM]] [[step      560]]     [[train]]     loss: 1.14e-06         [[val]]     loss: 1.11e-06         
+[[07/27/2023 02:11:52 AM]] [[step      580]]     [[train]]     loss: 1.05e-06         [[val]]     loss: 1.03e-06         
+[[07/27/2023 02:17:18 AM]] [[step      600]]     [[train]]     loss: 9.7e-07          [[val]]     loss: 9.5e-07          
+[[07/27/2023 02:22:44 AM]] [[step      620]]     [[train]]     loss: 8.7e-07          [[val]]     loss: 9e-07            
+[[07/27/2023 02:28:10 AM]] [[step      640]]     [[train]]     loss: 7.8e-07          [[val]]     loss: 8.4e-07          
+[[07/27/2023 02:33:36 AM]] [[step      660]]     [[train]]     loss: 7.3e-07          [[val]]     loss: 7.8e-07          
+[[07/27/2023 02:39:03 AM]] [[step      680]]     [[train]]     loss: 7e-07            [[val]]     loss: 7.4e-07          
+[[07/27/2023 02:44:30 AM]] [[step      700]]     [[train]]     loss: 6.7e-07          [[val]]     loss: 6.9e-07          
+[[07/27/2023 02:49:56 AM]] [[step      720]]     [[train]]     loss: 6.3e-07          [[val]]     loss: 6.6e-07          
+[[07/27/2023 02:55:22 AM]] [[step      740]]     [[train]]     loss: 6e-07            [[val]]     loss: 6.3e-07          
+[[07/27/2023 03:00:49 AM]] [[step      760]]     [[train]]     loss: 5.9e-07          [[val]]     loss: 6e-07            
+[[07/27/2023 03:06:16 AM]] [[step      780]]     [[train]]     loss: 5.7e-07          [[val]]     loss: 5.6e-07          
+[[07/27/2023 03:11:42 AM]] [[step      800]]     [[train]]     loss: 5.5e-07          [[val]]     loss: 5.3e-07          
+[[07/27/2023 03:17:10 AM]] [[step      820]]     [[train]]     loss: 5.3e-07          [[val]]     loss: 5e-07            
+[[07/27/2023 03:22:39 AM]] [[step      840]]     [[train]]     loss: 5.1e-07          [[val]]     loss: 4.8e-07          
+[[07/27/2023 03:28:06 AM]] [[step      860]]     [[train]]     loss: 4.7e-07          [[val]]     loss: 4.5e-07          
+[[07/27/2023 03:33:33 AM]] [[step      880]]     [[train]]     loss: 4.4e-07          [[val]]     loss: 4.3e-07          
+[[07/27/2023 03:38:59 AM]] [[step      900]]     [[train]]     loss: 4.2e-07          [[val]]     loss: 4.1e-07          
+[[07/27/2023 03:44:26 AM]] [[step      920]]     [[train]]     loss: 3.9e-07          [[val]]     loss: 3.8e-07          
+[[07/27/2023 03:49:53 AM]] [[step      940]]     [[train]]     loss: 3.6e-07          [[val]]     loss: 3.6e-07          
+[[07/27/2023 03:55:20 AM]] [[step      960]]     [[train]]     loss: 3.5e-07          [[val]]     loss: 3.6e-07          
+[[07/27/2023 04:00:47 AM]] [[step      980]]     [[train]]     loss: 3.3e-07          [[val]]     loss: 3.4e-07          
+[[07/27/2023 04:06:13 AM]] [[step     1000]]     [[train]]     loss: 3.2e-07          [[val]]     loss: 3.2e-07          
+[[07/27/2023 04:11:41 AM]] [[step     1020]]     [[train]]     loss: 3e-07            [[val]]     loss: 3.1e-07          
+[[07/27/2023 04:11:41 AM]] saving model to ./checkpoints/model
+[[07/27/2023 04:17:08 AM]] [[step     1040]]     [[train]]     loss: 3e-07            [[val]]     loss: 3e-07            
+[[07/27/2023 04:17:08 AM]] saving model to ./checkpoints/model
+[[07/27/2023 04:22:39 AM]] [[step     1060]]     [[train]]     loss: 2.9e-07          [[val]]     loss: 2.8e-07          
+[[07/27/2023 04:22:39 AM]] saving model to ./checkpoints/model
+[[07/27/2023 04:28:09 AM]] [[step     1080]]     [[train]]     loss: 2.7e-07          [[val]]     loss: 2.8e-07          
+[[07/27/2023 04:28:09 AM]] saving model to ./checkpoints/model
+[[07/27/2023 04:33:38 AM]] [[step     1100]]     [[train]]     loss: 2.6e-07          [[val]]     loss: 2.6e-07          
+[[07/27/2023 04:33:38 AM]] saving model to ./checkpoints/model
+[[07/27/2023 04:39:07 AM]] [[step     1120]]     [[train]]     loss: 2.5e-07          [[val]]     loss: 2.5e-07          
+[[07/27/2023 04:39:07 AM]] saving model to ./checkpoints/model
+[[07/27/2023 04:44:37 AM]] [[step     1140]]     [[train]]     loss: 2.3e-07          [[val]]     loss: 2.4e-07          
+[[07/27/2023 04:44:37 AM]] saving model to ./checkpoints/model
+[[07/27/2023 04:50:05 AM]] [[step     1160]]     [[train]]     loss: 2.3e-07          [[val]]     loss: 2.4e-07          
+[[07/27/2023 04:50:05 AM]] saving model to ./checkpoints/model
+[[07/27/2023 04:55:35 AM]] [[step     1180]]     [[train]]     loss: 2.2e-07          [[val]]     loss: 2.3e-07          
+[[07/27/2023 04:55:35 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:01:04 AM]] [[step     1200]]     [[train]]     loss: 2.2e-07          [[val]]     loss: 2.2e-07          
+[[07/27/2023 05:01:04 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:06:33 AM]] [[step     1220]]     [[train]]     loss: 2.1e-07          [[val]]     loss: 2.1e-07          
+[[07/27/2023 05:06:33 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:12:03 AM]] [[step     1240]]     [[train]]     loss: 2e-07            [[val]]     loss: 2e-07            
+[[07/27/2023 05:12:03 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:17:33 AM]] [[step     1260]]     [[train]]     loss: 1.9e-07          [[val]]     loss: 1.9e-07          
+[[07/27/2023 05:17:33 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:23:02 AM]] [[step     1280]]     [[train]]     loss: 1.8e-07          [[val]]     loss: 1.9e-07          
+[[07/27/2023 05:23:02 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:28:32 AM]] [[step     1300]]     [[train]]     loss: 1.8e-07          [[val]]     loss: 1.8e-07          
+[[07/27/2023 05:28:32 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:34:02 AM]] [[step     1320]]     [[train]]     loss: 1.7e-07          [[val]]     loss: 1.7e-07          
+[[07/27/2023 05:34:02 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:39:31 AM]] [[step     1340]]     [[train]]     loss: 1.6e-07          [[val]]     loss: 1.7e-07          
+[[07/27/2023 05:39:31 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:45:00 AM]] [[step     1360]]     [[train]]     loss: 1.6e-07          [[val]]     loss: 1.6e-07          
+[[07/27/2023 05:45:00 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:50:28 AM]] [[step     1380]]     [[train]]     loss: 1.5e-07          [[val]]     loss: 1.6e-07          
+[[07/27/2023 05:50:28 AM]] saving model to ./checkpoints/model
+[[07/27/2023 05:55:58 AM]] [[step     1400]]     [[train]]     loss: 1.5e-07          [[val]]     loss: 1.5e-07          
+[[07/27/2023 05:55:58 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:01:29 AM]] [[step     1420]]     [[train]]     loss: 1.4e-07          [[val]]     loss: 1.5e-07          
+[[07/27/2023 06:01:29 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:06:58 AM]] [[step     1440]]     [[train]]     loss: 1.4e-07          [[val]]     loss: 1.4e-07          
+[[07/27/2023 06:06:58 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:12:28 AM]] [[step     1460]]     [[train]]     loss: 1.3e-07          [[val]]     loss: 1.4e-07          
+[[07/27/2023 06:12:28 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:17:57 AM]] [[step     1480]]     [[train]]     loss: 1.3e-07          [[val]]     loss: 1.4e-07          
+[[07/27/2023 06:17:57 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:23:28 AM]] [[step     1500]]     [[train]]     loss: 1.3e-07          [[val]]     loss: 1.3e-07          
+[[07/27/2023 06:23:28 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:28:57 AM]] [[step     1520]]     [[train]]     loss: 1.3e-07          [[val]]     loss: 1.3e-07          
+[[07/27/2023 06:28:57 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:34:27 AM]] [[step     1540]]     [[train]]     loss: 1.3e-07          [[val]]     loss: 1.2e-07          
+[[07/27/2023 06:34:27 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:39:56 AM]] [[step     1560]]     [[train]]     loss: 1.2e-07          [[val]]     loss: 1.2e-07          
+[[07/27/2023 06:39:56 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:45:26 AM]] [[step     1580]]     [[train]]     loss: 1.1e-07          [[val]]     loss: 1.2e-07          
+[[07/27/2023 06:45:26 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:50:57 AM]] [[step     1600]]     [[train]]     loss: 1.1e-07          [[val]]     loss: 1.1e-07          
+[[07/27/2023 06:50:57 AM]] saving model to ./checkpoints/model
+[[07/27/2023 06:56:27 AM]] [[step     1620]]     [[train]]     loss: 1.1e-07          [[val]]     loss: 1.1e-07          
+[[07/27/2023 06:56:27 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:01:56 AM]] [[step     1640]]     [[train]]     loss: 1e-07            [[val]]     loss: 1.1e-07          
+[[07/27/2023 07:01:56 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:07:26 AM]] [[step     1660]]     [[train]]     loss: 1e-07            [[val]]     loss: 1.1e-07          
+[[07/27/2023 07:07:26 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:12:55 AM]] [[step     1680]]     [[train]]     loss: 1e-07            [[val]]     loss: 1e-07            
+[[07/27/2023 07:12:55 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:18:24 AM]] [[step     1700]]     [[train]]     loss: 1e-07            [[val]]     loss: 1e-07            
+[[07/27/2023 07:18:24 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:23:53 AM]] [[step     1720]]     [[train]]     loss: 9e-08            [[val]]     loss: 1e-07            
+[[07/27/2023 07:23:53 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:29:24 AM]] [[step     1740]]     [[train]]     loss: 9e-08            [[val]]     loss: 9e-08            
+[[07/27/2023 07:29:24 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:34:51 AM]] [[step     1760]]     [[train]]     loss: 9e-08            [[val]]     loss: 9e-08            
+[[07/27/2023 07:34:51 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:40:21 AM]] [[step     1780]]     [[train]]     loss: 9e-08            [[val]]     loss: 9e-08            
+[[07/27/2023 07:40:21 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:45:50 AM]] [[step     1800]]     [[train]]     loss: 9e-08            [[val]]     loss: 9e-08            
+[[07/27/2023 07:45:50 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:51:20 AM]] [[step     1820]]     [[train]]     loss: 9e-08            [[val]]     loss: 8e-08            
+[[07/27/2023 07:51:20 AM]] saving model to ./checkpoints/model
+[[07/27/2023 07:56:49 AM]] [[step     1840]]     [[train]]     loss: 8e-08            [[val]]     loss: 8e-08            
+[[07/27/2023 07:56:49 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:02:20 AM]] [[step     1860]]     [[train]]     loss: 8e-08            [[val]]     loss: 8e-08            
+[[07/27/2023 08:02:20 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:07:48 AM]] [[step     1880]]     [[train]]     loss: 7e-08            [[val]]     loss: 8e-08            
+[[07/27/2023 08:07:48 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:13:17 AM]] [[step     1900]]     [[train]]     loss: 7e-08            [[val]]     loss: 8e-08            
+[[07/27/2023 08:13:17 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:18:46 AM]] [[step     1920]]     [[train]]     loss: 7e-08            [[val]]     loss: 7e-08            
+[[07/27/2023 08:18:46 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:24:16 AM]] [[step     1940]]     [[train]]     loss: 7e-08            [[val]]     loss: 7e-08            
+[[07/27/2023 08:24:16 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:29:45 AM]] [[step     1960]]     [[train]]     loss: 7e-08            [[val]]     loss: 7e-08            
+[[07/27/2023 08:29:45 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:35:15 AM]] [[step     1980]]     [[train]]     loss: 7e-08            [[val]]     loss: 7e-08            
+[[07/27/2023 08:35:15 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:40:45 AM]] [[step     2000]]     [[train]]     loss: 7e-08            [[val]]     loss: 7e-08            
+[[07/27/2023 08:40:45 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:46:14 AM]] [[step     2020]]     [[train]]     loss: 6e-08            [[val]]     loss: 7e-08            
+[[07/27/2023 08:46:14 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:51:43 AM]] [[step     2040]]     [[train]]     loss: 6e-08            [[val]]     loss: 7e-08            
+[[07/27/2023 08:51:43 AM]] saving model to ./checkpoints/model
+[[07/27/2023 08:57:12 AM]] [[step     2060]]     [[train]]     loss: 6e-08            [[val]]     loss: 6e-08            
+[[07/27/2023 08:57:12 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:02:41 AM]] [[step     2080]]     [[train]]     loss: 6e-08            [[val]]     loss: 6e-08            
+[[07/27/2023 09:02:41 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:08:11 AM]] [[step     2100]]     [[train]]     loss: 5e-08            [[val]]     loss: 6e-08            
+[[07/27/2023 09:08:11 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:13:39 AM]] [[step     2120]]     [[train]]     loss: 5e-08            [[val]]     loss: 6e-08            
+[[07/27/2023 09:13:39 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:19:10 AM]] [[step     2140]]     [[train]]     loss: 5e-08            [[val]]     loss: 6e-08            
+[[07/27/2023 09:19:10 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:24:42 AM]] [[step     2160]]     [[train]]     loss: 5e-08            [[val]]     loss: 6e-08            
+[[07/27/2023 09:30:10 AM]] [[step     2180]]     [[train]]     loss: 5e-08            [[val]]     loss: 6e-08            
+[[07/27/2023 09:30:10 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:35:40 AM]] [[step     2200]]     [[train]]     loss: 5e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 09:35:40 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:41:08 AM]] [[step     2220]]     [[train]]     loss: 5e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 09:41:08 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:46:38 AM]] [[step     2240]]     [[train]]     loss: 5e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 09:46:38 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:52:08 AM]] [[step     2260]]     [[train]]     loss: 5e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 09:52:08 AM]] saving model to ./checkpoints/model
+[[07/27/2023 09:57:37 AM]] [[step     2280]]     [[train]]     loss: 4e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 09:57:37 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:03:06 AM]] [[step     2300]]     [[train]]     loss: 5e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 10:08:33 AM]] [[step     2320]]     [[train]]     loss: 4e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 10:08:33 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:14:04 AM]] [[step     2340]]     [[train]]     loss: 4e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 10:14:04 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:19:35 AM]] [[step     2360]]     [[train]]     loss: 4e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 10:25:01 AM]] [[step     2380]]     [[train]]     loss: 4e-08            [[val]]     loss: 5e-08            
+[[07/27/2023 10:25:01 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:30:30 AM]] [[step     2400]]     [[train]]     loss: 4e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 10:30:30 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:36:02 AM]] [[step     2420]]     [[train]]     loss: 4e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 10:36:02 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:41:33 AM]] [[step     2440]]     [[train]]     loss: 4e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 10:41:33 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:47:04 AM]] [[step     2460]]     [[train]]     loss: 4e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 10:47:04 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:52:33 AM]] [[step     2480]]     [[train]]     loss: 4e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 10:52:33 AM]] saving model to ./checkpoints/model
+[[07/27/2023 10:58:03 AM]] [[step     2500]]     [[train]]     loss: 3e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 10:58:03 AM]] saving model to ./checkpoints/model
+[[07/27/2023 11:03:34 AM]] [[step     2520]]     [[train]]     loss: 3e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 11:03:34 AM]] saving model to ./checkpoints/model
+[[07/27/2023 11:09:05 AM]] [[step     2540]]     [[train]]     loss: 3e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 11:09:05 AM]] saving model to ./checkpoints/model
+[[07/27/2023 11:14:35 AM]] [[step     2560]]     [[train]]     loss: 3e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 11:14:35 AM]] saving model to ./checkpoints/model
+[[07/27/2023 11:20:04 AM]] [[step     2580]]     [[train]]     loss: 3e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 11:20:04 AM]] saving model to ./checkpoints/model
+[[07/27/2023 11:25:35 AM]] [[step     2600]]     [[train]]     loss: 3e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 11:31:01 AM]] [[step     2620]]     [[train]]     loss: 3e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 11:31:01 AM]] saving model to ./checkpoints/model
+[[07/27/2023 11:36:31 AM]] [[step     2640]]     [[train]]     loss: 3e-08            [[val]]     loss: 4e-08            
+[[07/27/2023 11:36:31 AM]] saving model to ./checkpoints/model

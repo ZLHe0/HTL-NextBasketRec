@@ -1,0 +1,34 @@
+#!/bin/bash
+#PBS -A open
+#PBS -N rnn_product
+#PBS -l nodes=1:ppn=2
+#PBS -l pmem=32gb
+#PBS -l walltime=12:00:00
+#PBS -l feature=rhel7
+#PBS -j oe
+#PBS -m abe
+#PBS -M zelinhe0@gmail.com
+
+# Get Started
+echo " "
+echo "job started on 'hostname' at 'date'"
+echo " "
+
+# Load the Python module
+# Load Python (does not work) or activate your virtual environment
+# module load /storage/home/zbh5185/work/myenv/bin/python
+# or
+source /storage/home/zbh5185/work/myenv/bin/activate
+
+
+# Go to the submission directory
+cd /storage/home/zbh5185/work/Instacart_Market
+
+# Run the job itself
+cd models/rnn_product
+python rnn_product.py
+
+# Finish up
+echo " "
+echo "job ended at 'date'"
+echo " "

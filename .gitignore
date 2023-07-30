@@ -1,0 +1,8 @@
+# Ignore csv, npy, checkpoint files
+*.csv
+*.npy
+*.data-00000-of-00001
+models/rnn_product/checkpoints/
+models/blend/checkpoints_nn/
+# Igore compiled python file
+__pycache__/
