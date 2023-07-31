@@ -1,0 +1,111 @@
+[[07/30/2023 10:18:33 PM]] 
+new run with parameters:
+{'batch_size': 128,
+ 'checkpoint_dir': './checkpoints_nn',
+ 'early_stopping_steps': 300,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 5,
+ 'hidden_units': 64,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.005,
+ 'log_dir': './logs_nn',
+ 'log_interval': 20,
+ 'loss_averaging_window': 100,
+ 'min_steps_to_checkpoint': 100,
+ 'num_restarts': 0,
+ 'num_training_steps': 2000,
+ 'num_validation_batches': 2,
+ 'optimizer': 'adam',
+ 'prediction_dir': './predictions_nn',
+ 'reader': <__main__.DataReader object at 0x2b4bcf0a3978>,
+ 'regularization_constant': 0.0,
+ 'warm_start_init_step': 0}
+[[07/30/2023 10:18:54 PM]] all parameters:
+[[07/30/2023 10:18:54 PM]] [('dense1/weights:0', [51, 64]),
+ ('dense1/biases:0', [64]),
+ ('dense2/weights:0', [115, 1]),
+ ('dense2/biases:0', [1]),
+ ('Variable:0', []),
+ ('Variable_1:0', []),
+ ('beta1_power:0', []),
+ ('beta2_power:0', []),
+ ('dense1/weights/Adam:0', [51, 64]),
+ ('dense1/weights/Adam_1:0', [51, 64]),
+ ('dense1/biases/Adam:0', [64]),
+ ('dense1/biases/Adam_1:0', [64]),
+ ('dense2/weights/Adam:0', [115, 1]),
+ ('dense2/weights/Adam_1:0', [115, 1]),
+ ('dense2/biases/Adam:0', [1]),
+ ('dense2/biases/Adam_1:0', [1])]
+[[07/30/2023 10:18:54 PM]] trainable parameters:
+[[07/30/2023 10:18:54 PM]] [('dense1/weights:0', [51, 64]),
+ ('dense1/biases:0', [64]),
+ ('dense2/weights:0', [115, 1]),
+ ('dense2/biases:0', [1])]
+[[07/30/2023 10:18:54 PM]] trainable parameter count:
+[[07/30/2023 10:18:54 PM]] 3444
+[[07/30/2023 10:18:54 PM]] [[step        0]]     [[train]]     loss: 0.75271118       [[val]]     loss: 0.75339413       
+[[07/30/2023 10:18:54 PM]] [[step       20]]     [[train]]     loss: 0.48793136       [[val]]     loss: 0.49481616       
+[[07/30/2023 10:18:54 PM]] [[step       40]]     [[train]]     loss: 0.42582021       [[val]]     loss: 0.42440632       
+[[07/30/2023 10:18:54 PM]] [[step       60]]     [[train]]     loss: 0.39748006       [[val]]     loss: 0.39367826       
+[[07/30/2023 10:18:54 PM]] [[step       80]]     [[train]]     loss: 0.38430139       [[val]]     loss: 0.37653862       
+[[07/30/2023 10:18:54 PM]] [[step      100]]     [[train]]     loss: 0.36929306       [[val]]     loss: 0.36337359       
+[[07/30/2023 10:18:54 PM]] [[step      120]]     [[train]]     loss: 0.3387338        [[val]]     loss: 0.33396869       
+[[07/30/2023 10:18:54 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:55 PM]] [[step      140]]     [[train]]     loss: 0.33010384       [[val]]     loss: 0.3275974        
+[[07/30/2023 10:18:55 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:55 PM]] [[step      160]]     [[train]]     loss: 0.32831751       [[val]]     loss: 0.32398748       
+[[07/30/2023 10:18:55 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:55 PM]] [[step      180]]     [[train]]     loss: 0.32083026       [[val]]     loss: 0.32604748       
+[[07/30/2023 10:18:55 PM]] [[step      200]]     [[train]]     loss: 0.31846202       [[val]]     loss: 0.32383279       
+[[07/30/2023 10:18:55 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:55 PM]] [[step      220]]     [[train]]     loss: 0.31781448       [[val]]     loss: 0.32084521       
+[[07/30/2023 10:18:55 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:56 PM]] [[step      240]]     [[train]]     loss: 0.31966298       [[val]]     loss: 0.32138937       
+[[07/30/2023 10:18:56 PM]] [[step      260]]     [[train]]     loss: 0.31715774       [[val]]     loss: 0.3239035        
+[[07/30/2023 10:18:56 PM]] [[step      280]]     [[train]]     loss: 0.32070999       [[val]]     loss: 0.32000683       
+[[07/30/2023 10:18:56 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:56 PM]] [[step      300]]     [[train]]     loss: 0.32548014       [[val]]     loss: 0.31973679       
+[[07/30/2023 10:18:56 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:56 PM]] [[step      320]]     [[train]]     loss: 0.32646553       [[val]]     loss: 0.31761517       
+[[07/30/2023 10:18:56 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:57 PM]] [[step      340]]     [[train]]     loss: 0.32480357       [[val]]     loss: 0.31730035       
+[[07/30/2023 10:18:57 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:57 PM]] [[step      360]]     [[train]]     loss: 0.32544949       [[val]]     loss: 0.31587424       
+[[07/30/2023 10:18:57 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:57 PM]] [[step      380]]     [[train]]     loss: 0.32613562       [[val]]     loss: 0.31739246       
+[[07/30/2023 10:18:57 PM]] [[step      400]]     [[train]]     loss: 0.31777624       [[val]]     loss: 0.31888783       
+[[07/30/2023 10:18:57 PM]] [[step      420]]     [[train]]     loss: 0.31601995       [[val]]     loss: 0.31917328       
+[[07/30/2023 10:18:58 PM]] [[step      440]]     [[train]]     loss: 0.31324505       [[val]]     loss: 0.31974162       
+[[07/30/2023 10:18:58 PM]] [[step      460]]     [[train]]     loss: 0.31194789       [[val]]     loss: 0.32023205       
+[[07/30/2023 10:18:58 PM]] [[step      480]]     [[train]]     loss: 0.31098212       [[val]]     loss: 0.32169271       
+[[07/30/2023 10:18:58 PM]] [[step      500]]     [[train]]     loss: 0.31379211       [[val]]     loss: 0.31661076       
+[[07/30/2023 10:18:58 PM]] [[step      520]]     [[train]]     loss: 0.30897558       [[val]]     loss: 0.31665724       
+[[07/30/2023 10:18:58 PM]] [[step      540]]     [[train]]     loss: 0.31200609       [[val]]     loss: 0.31516462       
+[[07/30/2023 10:18:58 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:58 PM]] [[step      560]]     [[train]]     loss: 0.31019792       [[val]]     loss: 0.31654005       
+[[07/30/2023 10:18:58 PM]] [[step      580]]     [[train]]     loss: 0.30708776       [[val]]     loss: 0.31115103       
+[[07/30/2023 10:18:58 PM]] saving model to ./checkpoints_nn/model
+[[07/30/2023 10:18:59 PM]] [[step      600]]     [[train]]     loss: 0.30671017       [[val]]     loss: 0.31686836       
+[[07/30/2023 10:18:59 PM]] [[step      620]]     [[train]]     loss: 0.31135296       [[val]]     loss: 0.31928435       
+[[07/30/2023 10:18:59 PM]] [[step      640]]     [[train]]     loss: 0.3092441        [[val]]     loss: 0.31938754       
+[[07/30/2023 10:18:59 PM]] [[step      660]]     [[train]]     loss: 0.30931046       [[val]]     loss: 0.3170113        
+[[07/30/2023 10:18:59 PM]] [[step      680]]     [[train]]     loss: 0.30947039       [[val]]     loss: 0.32298712       
+[[07/30/2023 10:18:59 PM]] [[step      700]]     [[train]]     loss: 0.31357691       [[val]]     loss: 0.31928558       
+[[07/30/2023 10:18:59 PM]] [[step      720]]     [[train]]     loss: 0.31786759       [[val]]     loss: 0.31792481       
+[[07/30/2023 10:18:59 PM]] [[step      740]]     [[train]]     loss: 0.31911006       [[val]]     loss: 0.31863939       
+[[07/30/2023 10:18:59 PM]] [[step      760]]     [[train]]     loss: 0.3194213        [[val]]     loss: 0.31744615       
+[[07/30/2023 10:18:59 PM]] [[step      780]]     [[train]]     loss: 0.31781119       [[val]]     loss: 0.3135876        
+[[07/30/2023 10:18:59 PM]] [[step      800]]     [[train]]     loss: 0.31247245       [[val]]     loss: 0.31560196       
+[[07/30/2023 10:19:00 PM]] [[step      820]]     [[train]]     loss: 0.3068896        [[val]]     loss: 0.31550779       
+[[07/30/2023 10:19:00 PM]] [[step      840]]     [[train]]     loss: 0.30703401       [[val]]     loss: 0.31468108       
+[[07/30/2023 10:19:00 PM]] [[step      860]]     [[train]]     loss: 0.30670562       [[val]]     loss: 0.3187057        
+[[07/30/2023 10:19:00 PM]] [[step      880]]     [[train]]     loss: 0.3127798        [[val]]     loss: 0.31805583       
+[[07/30/2023 10:19:00 PM]] [[step      900]]     [[train]]     loss: 0.31698601       [[val]]     loss: 0.31867206       
+[[07/30/2023 10:19:00 PM]] best validation loss of 0.3111510299146175 at training step 580
+[[07/30/2023 10:19:00 PM]] early stopping - ending training.
+[[07/30/2023 10:19:00 PM]] restoring model parameters from ./checkpoints_nn/model-580
+[[07/30/2023 10:19:01 PM]] saving order_ids with shape (248126,) to ./predictions_nn/order_ids.npy
+[[07/30/2023 10:19:01 PM]] saving product_ids with shape (248126,) to ./predictions_nn/product_ids.npy
+[[07/30/2023 10:19:01 PM]] saving predictions with shape (248126,) to ./predictions_nn/predictions.npy
+[[07/30/2023 10:19:01 PM]] saving labels with shape (248126,) to ./predictions_nn/labels.npy
