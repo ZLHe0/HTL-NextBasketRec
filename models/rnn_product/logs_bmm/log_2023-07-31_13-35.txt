@@ -1,0 +1,22 @@
+[[07/31/2023 01:35:10 PM]] 
+new run with parameters:
+{'batch_size': 128,
+ 'checkpoint_dir': './checkpoints_bmm',
+ 'early_stopping_steps': 100,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 5,
+ 'keep_prob_scalar': 0.5,
+ 'learning_rate': 0.001,
+ 'log_dir': './logs_bmm',
+ 'log_interval': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 300,
+ 'min_steps_to_checkpoint': 200,
+ 'num_restarts': 2,
+ 'num_training_steps': 800,
+ 'num_validation_batches': 4,
+ 'optimizer': 'adam',
+ 'prediction_dir': './predictions_bmm',
+ 'reader': <__main__.DataReader object at 0x2b4e8911f3c8>,
+ 'regularization_constant': 0.0,
+ 'warm_start_init_step': 0}
