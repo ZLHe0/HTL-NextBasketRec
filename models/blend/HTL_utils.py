@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import log_loss
 
 # Function to create the ULM data
 def create_ULM_data(y, y0, X, X0):
@@ -55,4 +57,90 @@ def create_vlambda(X, X0):
     result = np.concatenate([result, np.repeat(global_lambda, X0.shape[1])])
     
     return result
+
+def tune_regularization(X_train, Y_train, X_val, Y_val, C_values):
+    """
+    Function to tune the regularization parameter of a logistic regression model.
+    
+    Parameters:
+    X_train: Training data features
+    Y_train: Training data labels
+    X_val: Validation data features
+    Y_val: Validation data labels
+    C_values: List of regularization parameters to try
+    
+    Returns:
+    best_C: The regularization parameter that resulted in the lowest log loss on the validation set
+    best_log_loss: The best log loss achieved on the validation set
+    """
+    # Initialize variables to store the best log loss and corresponding regularization parameter
+    best_log_loss = float('inf')
+    best_C = None
+
+    # Iterate over the regularization parameters
+    for C in C_values:
+        # Initialize a PolynomialFeatures object
+        # poly = PolynomialFeatures(degree=2, interaction_only=False, include_bias=True)
+        # Initialize a Logistic Regression model with 'LASSO' penalty
+        log_reg = LogisticRegression(penalty='l1', C=C, solver='liblinear', class_weight={0:1, 1:5})
+        # Create a pipeline that first adds interaction terms, then fits the logistic regression model
+        # model = make_pipeline(poly, log_reg)
+        # Fit the model (replace X_train and y_train with your actual data)
+        # model.fit(X_train, Y_train)
+        log_reg.fit(X_train, Y_train)
+
+        # Predict the probabilities of the validation set
+        # val_preds = model.predict_proba(X_val)[:, 1]
+        val_preds = log_reg.predict_proba(X_val)[:, 1]
+
+
+        # Calculate the log loss on the validation set
+        val_log_loss = log_loss(Y_val, val_preds)
+        print(f'Regularization Parameter: {C}, Validation Log Loss: {val_log_loss}')
+
+        # If this log loss is smaller than the current best, update the best log loss and regularization parameter
+        if val_log_loss < best_log_loss:
+            best_log_loss = val_log_loss
+            best_C = C
+            best_model = log_reg
+
+    return best_C, best_log_loss, best_model
+
+# Calculate F-score
+def cal_f_value(pred, label, model):
+    TP = sum((label==1) & (pred==1))
+    FP = sum((pred==1) & (label==0))
+    FN = sum((pred==0) & (label==1))
+    recall = TP / (TP + FN)
+    precision = TP / (TP + FP)
+    F_value = 2 / (1/recall + 1/precision)
+    summary = [model, recall, precision, F_value]
+    summary_name = ["model", "recall", "precision", "F_value"]
+    return(pd.DataFrame(dict(zip(summary_name, summary)), index=[0]))
+
+
+from sklearn.metrics import roc_curve, auc
+from plotnine import ggplot, aes, geom_line, geom_abline, ggtitle
+import pandas as pd
+
+def plot_roc(true_label, predicted_probabilities):
+    # Compute ROC curve
+    fpr, tpr, _ = roc_curve(true_label, predicted_probabilities)
+    roc_df = pd.DataFrame({'FPR': fpr, 'TPR': tpr})
+
+    # Compute ROC AUC
+    roc_auc = auc(fpr, tpr)
+
+    # Create the ROC plot
+    roc_plot = (ggplot(roc_df, aes(x='FPR', y='TPR')) +
+                geom_line(color='blue') +
+                geom_abline(intercept=0, slope=1, color='black', linetype='dashed') +
+                ggtitle(f'ROC Curve (AUC = {roc_auc:.2f})'))
+
+    print(roc_plot)
+    print(roc_df)
+
+# Use the function like this:
+# plot_roc(true_label, gbm_df['prediction_gbm'])
+
 
