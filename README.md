@@ -11,7 +11,7 @@ To generate the results, please adhere to the following steps:
     python preprocessing.py
     ```
 
-2. Implement a Matrix Factorization (MF) model to derive valuable representations from the purchase history:
+2. Implement a Matrix Factorization (MF) model to derive informative representations from the purchase history:
     ```shell
     cd ../models/features/representation_mf
     python prepare_mf.py
