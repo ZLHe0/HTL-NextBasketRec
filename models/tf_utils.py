@@ -1,5 +1,8 @@
+"""
+TensorFlow based implementation of several common layers.
+Refer to the original code at: https://github.com/sjvasquez/instacart-basket-prediction
+"""
 import tensorflow as tf
-
 
 def lstm_layer(inputs, lengths, state_size, keep_prob=1.0, scope='lstm-layer', reuse=False, return_final_state=False):
     """
@@ -54,12 +57,8 @@ def temporal_convolution_layer(inputs, output_units, convolution_width, causal=F
     """
     with tf.variable_scope(scope, reuse=reuse):
         if causal:
-            # Debug: which one is float?
-            # print("tf.shape(inputs)[0]: ", tf.shape(inputs)[0])
-            # print("shift: ", shift)
-            # print("inputs.shape.as_list()[2]: ", inputs.shape.as_list()[2])
-            shift = (int(convolution_width) // 2) + (int(dilation_rate[0]) - 1) // 2
-            pad = tf.zeros([int(tf.shape(inputs)[0]), int(shift), int(inputs.shape.as_list()[2])])
+            shift = (convolution_width / 2) + (int(dilation_rate[0] - 1) / 2)
+            pad = tf.zeros([tf.shape(inputs)[0], shift, inputs.shape.as_list()[2]])
             inputs = tf.concat([pad, inputs], axis=1)
 
         W = tf.get_variable(
@@ -186,8 +185,7 @@ def wavenet(x, dilations, filter_widths, skip_channels, residual_channels, scope
                 inputs=inputs,
                 output_units=2*residual_channels,
                 convolution_width=filter_width,
-                # Set Causal to be False
-                causal=False,
+                causal=True,
                 dilation_rate=[dilation],
                 scope='cnn-{}'.format(i)
             )

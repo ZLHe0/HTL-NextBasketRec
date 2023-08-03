@@ -1,3 +1,7 @@
+"""
+TensorFlow based implementation of base neunal network models.
+Refer to the original code at: https://github.com/sjvasquez/instacart-basket-prediction
+"""
 from collections import deque
 from datetime import datetime
 import logging
@@ -8,6 +12,7 @@ import numpy as np
 import tensorflow as tf
 
 from tf_utils import shape
+from importlib import reload
 
 
 class TFBaseModel(object):
@@ -125,7 +130,7 @@ class TFBaseModel(object):
             while step < self.num_training_steps:
 
                 # validation evaluation
-                val_batch_df = next(val_generator)
+                val_batch_df = val_generator.next()
                 val_feed_dict = {
                     getattr(self, placeholder_name, None): data
                     for placeholder_name, data in val_batch_df if hasattr(self, placeholder_name)
@@ -144,7 +149,7 @@ class TFBaseModel(object):
                 val_loss_history.append(val_loss)
 
                 # train step
-                train_batch_df = next(train_generator)
+                train_batch_df = train_generator.next()
                 train_feed_dict = {
                     getattr(self, placeholder_name, None): data
                     for placeholder_name, data in train_batch_df if hasattr(self, placeholder_name)
@@ -280,10 +285,8 @@ class TFBaseModel(object):
 
         date_str = datetime.now().strftime('%Y-%m-%d_%H-%M')
         log_file = 'log_{}.txt'.format(date_str)
-        
-        # Additional packages for python 2 functions: not work
-        from importlib import reload
-        reload(logging)  # bad for Jupyter
+
+        reload(logging)  # bad
         logging.basicConfig(
             filename=os.path.join(log_dir, log_file),
             level=logging.INFO,

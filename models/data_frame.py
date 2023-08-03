@@ -1,5 +1,10 @@
+"""
+Minimal pd.DataFrame analog for handling n-dimensional numpy matrices with additional 
+support for shuffling, batching, and train/test splitting.
+    
+Refer to the original code at: https://github.com/sjvasquez/instacart-basket-prediction
+"""
 import copy
-
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split

@@ -1,4 +1,4 @@
-the following data files should be placed in this directory
+The following data files should be placed in this directory
 - aisles.csv
 - departments.csv
 - order_products__prior.csv
