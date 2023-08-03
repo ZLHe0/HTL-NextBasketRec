@@ -31,7 +31,7 @@ To generate the results, please adhere to the following steps:
     python prepare_htl.py
     # Execute a benchmark model to demonstrate the efficacy of feature-based fine-tuning
     python benchmark.py
-    # Train the HTL-based fine-tuned model and perform comparisons with fine-tuned models and pooled models
+    # Train the HTL-based fine-tuned model and perform comparisons with benchmark fine-tuned models and pre-trained models
     python train_htl.py
     ```
 Bear in mind that each step builds upon the previous, so they should be executed sequentially.
