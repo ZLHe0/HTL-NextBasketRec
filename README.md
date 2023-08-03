@@ -1,7 +1,8 @@
 # HTL-NextBasketRec
 An implementation of the Heterogeneous Transfer Learning (HTL) method for next-basket recommendation scenarios.
+> The work is currently under review. Additional details about the model and the theory behind it will be added after the paper is published.
 
-## Instructions for Use
+## Sample Code: Model Training and Evaluation
 To generate the results, please adhere to the following steps:
 
 1. Assemble a user-wise dataset and a dataset of user-product pairs:
