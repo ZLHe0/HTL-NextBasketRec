@@ -34,4 +34,6 @@ To generate the results, please adhere to the following steps:
     # Train the HTL-based fine-tuned model and perform comparisons with benchmark fine-tuned models and pre-trained models
     python train_htl.py
     ```
-Bear in mind that each step builds upon the previous, so they should be executed sequentially.
+
+## Acknowledgements
+This project makes use of data and solutions from the [Instacart Market Basket Analysis competition](https://www.kaggle.com/c/instacart-market-basket-analysis) on Kaggle.
