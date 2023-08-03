@@ -29,9 +29,9 @@ To generate the results, please adhere to the following steps:
     ```shell
     cd ../../model
     python prepare_htl.py
-    # Execute a benchmark model to demonstrate the efficacy of feature-based fine-tuning
+    # Execute a benchmark model to demonstrate the efficacy of feature-based transfer learning
     python benchmark.py
-    # Train the HTL-based fine-tuned model and perform comparisons with benchmark fine-tuned models and pre-trained models
+    # Train the HTL-based fine-tuned model and perform comparisons with benchmark transfer learning models and pre-trained models
     python train_htl.py
     ```
 
