@@ -11,14 +11,14 @@ To generate the results, please adhere to the following steps:
     python preprocessing.py
     ```
 
-2. Implement a Matrix Factorization (MF) model to derive informative representations from the purchase history:
+2. Implement a Matrix Factorization (MF) model to derive informative representations from the user-product interaction:
     ```shell
     cd ../models/features/representation_mf
     python prepare_mf.py
     python train_mf
     ```
 
-3. Implement a Recurrent Neural Network (RNN) model to derive informative representations from the user-product interaction:
+3. Implement a Recurrent Neural Network (RNN) model to derive informative representations from the purchase history:
     ```shell
     cd ../representation_rnn
     python prepare_rnn.py
